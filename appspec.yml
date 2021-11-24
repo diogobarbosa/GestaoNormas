@@ -4,7 +4,7 @@ files:
   - source: ./GestaoNormas-0.0.1.jar
     destination: /tmp
 hooks:
-  BeforeInstall:
+  ApplicationStart:
     - location: start_server.sh
       runas: root
   ApplicationStop:
