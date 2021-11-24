@@ -6,4 +6,4 @@ files:
 hooks:
   ApplicationStart:
     - location: runapp.sh
-      runas: codedeployuser
+      runas: ec2-user
