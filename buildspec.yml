@@ -13,7 +13,7 @@ phases:
       - mvn install
   post_build:
     commands:
-      - tar -czvf target/GestaoNormas-0.0.1.tar.gz appspec.yml --directory=target GestaoNormas-0.0.1.jar
+      - tar -czvf target/GestaoNormas-0.0.1.tar.gz runapp.sh appspec.yml --directory=target GestaoNormas-0.0.1.jar
       - echo Build completed on `date`
 artifacts:
   files:

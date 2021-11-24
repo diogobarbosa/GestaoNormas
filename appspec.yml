@@ -3,3 +3,7 @@ os: linux
 files:
   - source: ./GestaoNormas-0.0.1.jar
     destination: /tmp
+hooks:
+  ApplicationStart:
+    - location: runapp.sh
+      runas: codedeployuser
