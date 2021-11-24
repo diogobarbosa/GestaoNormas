@@ -34,7 +34,7 @@ public class NormaUserCase implements NormaPort{
 	@Override
 	public NormaEntity consultarNorma(UUID idNorma) {
 	
-		return normaRepository.findById(idNorma).get();
+		return normaRepository.findById(idNorma).orElse(null);
 	}
 
 	@Override
