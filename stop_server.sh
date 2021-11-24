@@ -1,3 +1,6 @@
 #!/bin/bash
 cd '/tmp'
-kill $(cat ./pid.file)
+if ps -p $(cat ./pid.file) > /dev/null
+then
+   kill $(cat ./pid.file)
+fi
