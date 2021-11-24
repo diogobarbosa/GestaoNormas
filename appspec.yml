@@ -5,8 +5,8 @@ files:
     destination: /tmp
 hooks:
   BeforeInstall:
-    - location: runapp.sh
+    - location: start_server.sh
       runas: root
   ApplicationStop:
-    - location: scripts/stop_server.sh
+    - location: stop_server.sh
       runas: root
