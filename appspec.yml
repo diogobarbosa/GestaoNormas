@@ -4,6 +4,9 @@ files:
   - source: ./GestaoNormas-0.0.1.jar
     destination: /tmp
 hooks:
-  ApplicationStart:
+  BeforeInstall:
     - location: runapp.sh
-      runas: ec2-user
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+      runas: root
