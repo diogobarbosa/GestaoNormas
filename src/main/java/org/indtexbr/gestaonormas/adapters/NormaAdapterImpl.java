@@ -1,10 +1,10 @@
-package org.indtexbr.adapters;
+package org.indtexbr.gestaonormas.adapters;
 
 import java.util.List;
 import java.util.UUID;
 
-import org.indtexbr.entities.NormaEntity;
-import org.indtexbr.ports.NormaPort;
+import org.indtexbr.gestaonormas.entities.NormaEntity;
+import org.indtexbr.gestaonormas.ports.NormaPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

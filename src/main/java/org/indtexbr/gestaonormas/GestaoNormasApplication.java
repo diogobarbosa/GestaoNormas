@@ -1,4 +1,4 @@
-package org.indtexbr;
+package org.indtexbr.gestaonormas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

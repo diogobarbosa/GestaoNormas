@@ -1,9 +1,9 @@
-package org.indtexbr.ports;
+package org.indtexbr.gestaonormas.ports;
 
 import java.util.List;
 import java.util.UUID;
 
-import org.indtexbr.entities.NormaEntity;
+import org.indtexbr.gestaonormas.entities.NormaEntity;
 
 public interface NormaPort {
 

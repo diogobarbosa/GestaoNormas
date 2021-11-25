@@ -1,4 +1,4 @@
-package org.indtexbr.entities;
+package org.indtexbr.gestaonormas.entities;
 
 import java.time.LocalDate;
 import java.util.UUID;
