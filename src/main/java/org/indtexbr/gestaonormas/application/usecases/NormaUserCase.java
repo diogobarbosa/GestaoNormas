@@ -1,10 +1,10 @@
-package org.indtexbr.gestaonormas.usecases;
+package org.indtexbr.gestaonormas.application.usecases;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.indtexbr.gestaonormas.entities.NormaEntity;
+import org.indtexbr.gestaonormas.application.entities.NormaEntity;
 import org.indtexbr.gestaonormas.ports.NormaPort;
 import org.indtexbr.gestaonormas.ports.NormaRepository;
 import org.springframework.beans.factory.annotation.Autowired;

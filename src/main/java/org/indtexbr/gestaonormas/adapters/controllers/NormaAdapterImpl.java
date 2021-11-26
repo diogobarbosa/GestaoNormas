@@ -1,9 +1,11 @@
-package org.indtexbr.gestaonormas.adapters;
+package org.indtexbr.gestaonormas.adapters.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.indtexbr.gestaonormas.entities.NormaEntity;
+import org.indtexbr.gestaonormas.adapters.dto.NormaDTO;
+import org.indtexbr.gestaonormas.adapters.mappers.NormaMapper;
 import org.indtexbr.gestaonormas.ports.NormaPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,27 +26,33 @@ public class NormaAdapterImpl implements NormaAdapter{
 	private NormaPort normaUseCase;
 	
 	@GetMapping("/normas")
-	public ResponseEntity<List<NormaEntity>> consultarNormas() {
+	public ResponseEntity<List<NormaDTO>> consultarNormas() {
 
-		return ResponseEntity.ok(normaUseCase.consultarNormas());
+		List<NormaDTO> listaNormaDTO = new ArrayList<NormaDTO>();
+		normaUseCase.consultarNormas().forEach( normaEntity -> {
+						NormaDTO normaDTO = NormaMapper.normaEntityToNormaDTO(normaEntity);
+						listaNormaDTO.add(normaDTO);
+					});
+		
+		return ResponseEntity.ok(listaNormaDTO);
 	}
 	
 	@GetMapping("/normas/{idNorma}")
-	public ResponseEntity<NormaEntity> consultarNorma(@PathVariable UUID idNorma) {
+	public ResponseEntity<NormaDTO> consultarNorma(@PathVariable UUID idNorma) {
 
-		return ResponseEntity.ok(normaUseCase.consultarNorma(idNorma));
+		return ResponseEntity.ok(NormaMapper.normaEntityToNormaDTO(normaUseCase.consultarNorma(idNorma)));
 	}
 
 	@PostMapping("/normas")
-	public ResponseEntity<Void> inserirNorma(@RequestBody NormaEntity norma) {
+	public ResponseEntity<Void> inserirNorma(@RequestBody NormaDTO norma) {
 		
-		normaUseCase.inserirNorma(norma);
+		normaUseCase.inserirNorma(NormaMapper.normaDTOToNormaEntity(norma));
 		return ResponseEntity.noContent().build();
 	}
 
 	@PutMapping("/normas")
-	public ResponseEntity<Void> alterarNorma(@RequestBody NormaEntity norma) {
-		normaUseCase.alterarNorma(norma);
+	public ResponseEntity<Void> alterarNorma(@RequestBody NormaDTO norma) {
+		normaUseCase.alterarNorma(NormaMapper.normaDTOToNormaEntity(norma));
 		return ResponseEntity.noContent().build();
 	}
 

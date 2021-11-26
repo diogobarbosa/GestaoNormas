@@ -3,7 +3,7 @@ package org.indtexbr.gestaonormas.ports;
 import java.util.List;
 import java.util.UUID;
 
-import org.indtexbr.gestaonormas.entities.NormaEntity;
+import org.indtexbr.gestaonormas.application.entities.NormaEntity;
 
 public interface NormaPort {
 
