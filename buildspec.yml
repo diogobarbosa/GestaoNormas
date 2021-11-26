@@ -13,8 +13,11 @@ phases:
       - mvn install
   post_build:
     commands:
-      - tar -czvf target/GestaoNormas-0.0.1.tar.gz start_server.sh stop_server.sh appspec.yml --directory=target GestaoNormas-0.0.1.jar
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/GestaoNormas-0.0.1.tar.gz
+    - target/GestaoNormas-0.0.1.jar
+    - appspec.yml
+    - start_server.sh
+    - stop_server.sh
+  discard-paths: yes
