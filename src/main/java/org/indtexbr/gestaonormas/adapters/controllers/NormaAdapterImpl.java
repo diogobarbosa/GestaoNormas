@@ -50,8 +50,10 @@ public class NormaAdapterImpl implements NormaAdapter{
 		return ResponseEntity.noContent().build();
 	}
 
-	@PutMapping("/normas")
-	public ResponseEntity<Void> alterarNorma(@RequestBody NormaDTO norma) {
+	@PutMapping("/normas/{idNorma}")
+	public ResponseEntity<Void> alterarNorma(@PathVariable UUID idNorma, @RequestBody NormaDTO norma) {
+		
+		norma.setIdNorma(idNorma);
 		normaUseCase.alterarNorma(NormaMapper.normaDTOToNormaEntity(norma));
 		return ResponseEntity.noContent().build();
 	}

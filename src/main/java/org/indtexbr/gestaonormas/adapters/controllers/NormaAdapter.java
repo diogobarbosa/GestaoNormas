@@ -14,7 +14,7 @@ public interface NormaAdapter{
 
 	public ResponseEntity<NormaDTO> consultarNorma(UUID idNorma);
 	
-	public ResponseEntity<Void> alterarNorma(NormaDTO norma);
+	public ResponseEntity<Void> alterarNorma(UUID idNorma, NormaDTO norma);
 	
 	public ResponseEntity<Void> deletarNorma(UUID idNorma);
 }
